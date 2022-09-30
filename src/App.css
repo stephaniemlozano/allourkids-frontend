@@ -9,9 +9,73 @@
   background-image: linear-gradient(#FF914D, #FF914D, #EEA159, #F8E779);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  text-decoration: none;
+  color: rgb(82, 77, 77);
 }
 
 .header {
   font-family: 'Dangrek', cursive;
   display: flex;
+  align-content: space-around;
+}
+
+.banner {
+  margin: 50px auto auto 30px;
+  font-size: 30px;
+}
+
+.navscroll {
+  font-family: 'Dangrek', cursive;
+  font-size: 25px;
+  text-align: center;
+  border: 1px solid rgb(82, 77, 77);
+  border-radius: 10px;
+  width: 150px;
+  height: 450px;
+  margin: 25px 25px 5px 25px;
+}
+
+.home-item {
+  font-family: 'Dangrek', cursive;
+}
+
+.events {
+  font-family: 'Dangrek', cursive;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  margin: 20px;
+}
+
+.event-header {
+  font-family: 'Dangrek', cursive;
+  text-align: center;
+  font-size: 30px;
+}
+
+.single-event {
+  border: 1px solid rgb(82, 77, 77);
+  margin: 15px;
+  width: 375px;
+  height: 750px;
+  border-radius: 10px;
+}
+
+.single-event:hover {
+  box-shadow: 3px 8px 16px 3px rgba(37, 33, 33, 0.735);
+}
+
+.event-image {
+  margin-top: 5px;
+  width: 350px;
+  height: 300px;
+}
+
+.footer {
+  text-align: center;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 25px;
+  margin: 20px 10px 10px 10px;
 }

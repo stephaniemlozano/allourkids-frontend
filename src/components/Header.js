@@ -9,12 +9,12 @@ const Header = () => {
         <Container>
           <img src={myLogo} alt="logo" width={250}/>
         </Container>
-        <Container>
+        <Container className='banner'>
           <h1>For The Kids</h1>
-          <h2>connecting you to kids in need</h2>
+          <h2>Connecting you to kids in need</h2>
         </Container>
       </Navbar>
-      <Navbar classname="nav-scroll" sticky="left">
+      <Navbar className="navscroll" sticky="left">
         <Container>
           <Nav>
             <Nav.Link href="/">Home</Nav.Link>
