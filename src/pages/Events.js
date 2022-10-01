@@ -18,7 +18,7 @@ const Events = () => {
       <div className='events'>
         {item.map((eachItem, keyIndex) => {
           return (
-            <Link state={eachItem} to='/home'>
+            <Link state={eachItem} to='/'>
               <Card key={keyIndex} className='single-event'>
                 <Card.Img
                   className='event-image'
