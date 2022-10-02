@@ -16,7 +16,7 @@ const Header = () => {
       </Navbar>
       <Navbar className="navscroll" sticky="left">
         <Container>
-          <Nav>
+          <Nav className="flex-sm-column" navbarScroll={true}>
             <Nav.Link href="/">Home</Nav.Link>
             <br />
             <Nav.Link href="/mission">Our Mission</Nav.Link>

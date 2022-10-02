@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
+import imageC from '../images/volunteers.png'
 
 const Events = () => {
   const [item, setItem] = useState([])
@@ -14,6 +15,7 @@ const Events = () => {
 
   return (
     <div className='event-header'>
+      <img src={imageC} alt="volunteers sorting" width={600} />
       <h1>Future Events:</h1>
       <div className='events'>
         {item.map((eachItem, keyIndex) => {
