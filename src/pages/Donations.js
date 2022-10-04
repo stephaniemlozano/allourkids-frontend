@@ -1,6 +1,9 @@
+import imageD from '../images/donatetoday.png'
+
 const Donations = () => {
   return (
     <div>
+      <img src={imageD} alt="donate today" width={300} />
       <h1>Donation Guidelines</h1>
       <p>We can only accept new items with the exception of clothing. Clothing can be new or gently used/like new. All other items must be new.</p>
       <p>We accept sizes from preemie to teen/adult 4x. Items with holes, stains, fading, past events that they did not attend cannot be accepted. As well as handmade clothing, used toys, used school supplies and open hygiene products.</p>
