@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  background-image: linear-gradient(#2278FB, #2278FB, #2278FB, #3785FB, #68DEDA, #6BDFDB, #6BDFDB);
+  background-image: linear-gradient(#2278FB, #2278FB, #2278FB, #2278FB, #3785FB, #68DEDA, #6BDFDB, #6BDFDB);
   background-repeat: no-repeat;
   background-attachment: fixed;
   text-decoration: none;
@@ -16,36 +16,79 @@
 /* HEADER */
 .header {
   font-family: 'Dangrek', cursive;
-  display: flex;
-  align-content: space-around;
 }
 
-.banner {
-  margin: 50px auto auto 30px;
-  font-size: 30px;
-}
-
-.navscroll {
+Nav {
   font-family: 'Dangrek', cursive;
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
-  border: 1px solid rgb(82, 77, 77);
-  border-radius: 10px;
-  width: 150px;
-  height: 450px;
-  margin: 25px 25px 5px 25px;
 }
 
-/* HOME */
+.nav {
+  border: 1.5px solid rgb(82, 77, 77);
+  border-radius: 10px;
+  margin: 1px 5px 1px 5px;
+}
+
+#home {
+  margin: 0 10px 0 10px;
+}
+
+#home:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+  margin: 0 10px 0 10px;
+}
+
+#mission {
+  margin: 0 10px 0 10px;
+}
+
+#mission:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+#events {
+  margin: 0 10px 0 10px;
+}
+
+#events:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+#donations {
+  margin: 0 10px 0 10px;
+}
+
+#donations:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+
+/* EVENTS */
 .home-item {
   font-family: 'Dangrek', cursive;
   text-align: center;
+  display: flex;
+  margin: 35px 5px 20px 5px;
+}
+
+.barchart {
+  border: 1px solid rgb(82, 77, 77);
+  border-radius: 10px;
+  width: 550px;
+  height: 700px;
+  margin: auto;
 }
 
 .counter {
   border: 1px solid rgb(82, 77, 77);
   border-radius: 10px;
-  width: 800px;
+  width: 600px;
+  height: 700px;
   margin: auto;
 }
 
@@ -69,15 +112,15 @@ button:before {
   content: "";
   background: linear-gradient(
     45deg,
-    #e81980,
-    #ff1b8d,
+    #ffffff,
+    #40ff00,
     #ffd900,
     #40ff00,
     #0096e0,
     #40ff00,
     #ffd900,
-    #ff1b8d,
-    #e81980
+    #40ff00,
+    #ffffff
   );
   position: absolute;
   top: -2px;
@@ -137,21 +180,49 @@ img {
   width: 400px;
 }
 
-/* EVENTS */
+.mission-section {
+  border: 1px solid rgb(82, 77, 77);
+  border-radius: 10px;
+}
+
+/* HOME */
+
+/* .carousel-inner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  height: 600px;
+  width: 400px;
+  bottom: auto;
+}
+
+.carousel-caption {
+  position: relative;
+  left: auto;
+  right: auto;
+  padding-top: 25px;
+} */
+
 .events {
   font-family: 'Dangrek', cursive;
   font-size: 20px;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-around;
-  margin: 20px;
+  justify-content: center;
 }
 
-.event-header {
+.event-header>h1 {
+  font-family: 'Just Another Hand', cursive;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+.event-header>h2 {
   font-family: 'Dangrek', cursive;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .single-event {

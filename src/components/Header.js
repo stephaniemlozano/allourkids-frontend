@@ -3,32 +3,20 @@ import myLogo from '../images/ftk.gif'
 
 const Header = () => {
   return (
-    <>
     <div>
-      <Navbar className="header">
+      <Navbar>
         <Container>
-          <img src={myLogo} alt="logo" width={250}/>
-        </Container>
-        <Container className='banner'>
-          <h1>For The Kids</h1>
-          <h2>Connecting you to kids in need</h2>
-        </Container>
-      </Navbar>
-      <Navbar className="navscroll" sticky="left">
-        <Container>
-          <Nav className="flex-sm-column" navbarScroll={true}>
-            <Nav.Link href="/">Home</Nav.Link>
-            <br />
-            <Nav.Link href="/mission">Our Mission</Nav.Link>
-            <br />
-            <Nav.Link href="/events">Events</Nav.Link>
-            <br />
-            <Nav.Link href="/donations">Donations</Nav.Link>
-          </Nav>
+          <Navbar.Brand className="header">
+            <img src={myLogo} alt="logo" width={300}/>
+            <Nav bg='dark' className="nav">
+              <Nav.Link id="home" href='/'> Home </Nav.Link>
+              <Nav.Link id="mission" href='/mission'> Mission </Nav.Link>
+              <Nav.Link id="donations" href='/donations'> Donations </Nav.Link>
+            </Nav>
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </div>
-    </>
   )
 }
 

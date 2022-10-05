@@ -1,70 +1,57 @@
-import BarChart from 'react-easy-bar-chart'
-import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
+
 
 const Home = () => {
-  const [counter1, setCounter1] = useState(0)
-  const [counter2, setCounter2] = useState(0)
-  const [counter3, setCounter3] = useState(0)
+  const [item, setItem] = useState([])
 
-  const location = useLocation({})
-  const { image, eventname, item1, item2, item3 } = location.state
-
-  const barData = [
-    {
-      title: item1,
-      value: 12,
-      color: '#f3a712'
-    },
-    {
-      title: item2,
-      value: 35,
-      color: '#29335c'
-    },
-    {
-      title: item3,
-      value: 20,
-      color: '#db2b39'
-    }
-  ]
-
-    console.log(`Items donated: ${item1} - ${counter1}, ${item2} - ${counter2}, ${item3} - ${counter3}`)
-
+  useEffect(() => {
+    fetch('http://localhost:4001/')
+      .then((response) => response.json())
+      .then((data) => setItem(data))
+      .catch((error) => console.error(error))
+  }, [])
 
   return (
-    <div className='home-item'>
-        <div className='barchart'>
-        <h1>YOUR Donations At Work</h1>
-        <BarChart 
-          xAxis = 'Items Needed'
-          yAxis = 'Amount Donated'
-          height={400}
-          width={800}
-          data={barData}
-        />
-      </div>
-      <div className='counter'>
-          <h2>Every Donation Counts!</h2>
-            <h3>Your donation goes directly to a foster child in Pinellas and Pasco counties.</h3> 
-          <h2>THANK YOU for your support of:</h2>
-          <h2>{eventname}</h2>
-          <img src={image} alt="event" width={300} />
-
-          <h3>Today I donated...</h3>
-          <button onClick={() => setCounter1(counter1 + 1)}>{item1}</button>
-          <button onClick={() => setCounter2(counter2 + 1)}>{item2}</button>
-          <button onClick={() => setCounter3(counter3 + 1)}>{item3}</button>
+    <div className='event-header'>
+      <h1>Join the party and give back to your community!</h1>
+      <br />
+      <h2>Our Events</h2>
+      <div className='events'>
+        {item.map((eachItem, keyIndex) => {
+          return (
+            <Link state={eachItem} to='/events'>
+              <Card key={keyIndex} className='single-event'>
+                <Card.Img
+                  className='event-image'
+                  variant='top'
+                  src={eachItem.image}
+                />
+                <Card.Body>
+                  <Card.Title>
+                    <h3>{eachItem.eventname}</h3>
+                  </Card.Title>
+                  <Card.Text>
+                    <h4>Date: {eachItem.date}</h4>
+                    <h4>Time: {eachItem.time}</h4>
+                    <h4>Address: {eachItem.address}</h4>
+                    <br />
+                    <h4>Donations Being Collected:</h4>
+                      <p>1. {eachItem.item1}</p>
+                      <p>2. {eachItem.item2}</p>
+                      <p>3. {eachItem.item3}</p>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          )
+        })}
       </div>
     </div>
-
-    
   )
 }
 
 export default Home
 
 
-// state doesnt work unless i select event from Event page before going to homepage. useContext?
-// how to link clicks with bar chart to be reactive, onchange and handle function?
-// left nav sticky and scroll - ideas?
-// still need styling
