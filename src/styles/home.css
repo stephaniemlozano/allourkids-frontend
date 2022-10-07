@@ -1,0 +1,58 @@
+/* HOME */
+
+/* .carousel-inner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  height: 600px;
+  width: 400px;
+  bottom: auto;
+}
+
+.carousel-caption {
+  position: relative;
+  left: auto;
+  right: auto;
+  padding-top: 25px;
+} */
+
+.home {
+  font-family: 'Dangrek', cursive;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-header > h1 {
+  font-family: 'Just Another Hand', cursive;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+.home-header > h2 {
+  font-family: 'Dangrek', cursive;
+  text-align: center;
+  font-size: 40px;
+}
+
+.single-event {
+  border: 1px solid rgb(82, 77, 77);
+  margin: 15px;
+  width: 375px;
+  height: 750px;
+  border-radius: 10px;
+}
+
+.single-event:hover {
+  box-shadow: 3px 8px 16px 3px rgba(37, 33, 33, 0.735);
+}
+
+.home-image {
+  margin-top: 5px;
+  width: 350px;
+  height: 300px;
+}
+

@@ -1,0 +1,79 @@
+/* DONATIONS */
+
+.donations {
+  font-family: 'Dangrek', cursive;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.donations>h1, h2 {
+  font-size: 35px;
+}
+
+.donations>h1:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+.donations>h2:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+.donation-header {
+  display: flex;
+  text-align: left;
+  border: 1px solid rgb(82, 77, 77);
+  border-radius: 10px;
+  margin: 5px 5px 15px 5px;
+  font-size: 21px;
+}
+
+.donation-header>p {
+  margin-top: 50px;
+  width: 850px;
+}
+
+.donation-header>img {
+  margin: 10px auto 10px auto;
+}
+
+.donation-list {
+  display: flex;
+}
+
+.list-card {
+  border: 1px solid rgb(82, 77, 77);
+  border-radius: 10px;
+  margin: 25px;
+  width: 300px;
+  height: 450px;
+}
+
+.list-card:hover {
+  box-shadow: 3px 8px 16px 3px rgba(37, 33, 33, 0.735);
+}
+
+.title {
+  font-size: 25px;
+}
+
+.title:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+}
+
+.office {
+  margin: 10px;
+  font-size: 25px;
+}
+
+.office>p:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}

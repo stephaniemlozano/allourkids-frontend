@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Just+Another+Hand&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Just+Another+Hand&display=swap');
+ @import './styles/header.css';
+ @import './styles/home.css';
+ @import './styles/events.css';
+ @import './styles/mission.css';
+ @import './styles/donations.css';
+ @import './styles/footer.css';
 
 *,
 *::after,
@@ -6,250 +12,19 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  background-image: linear-gradient(#2278FB, #2278FB, #2278FB, #2278FB, #3785FB, #68DEDA, #6BDFDB, #6BDFDB);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  text-decoration: none;
-  color: rgb(82, 77, 77);
-}
-
-/* HEADER */
-.header {
-  font-family: 'Dangrek', cursive;
-}
-
-Nav {
-  font-family: 'Dangrek', cursive;
-  font-size: 30px;
-  text-align: center;
-}
-
-.nav {
-  border: 1.5px solid rgb(82, 77, 77);
-  border-radius: 10px;
-  margin: 1px 5px 1px 5px;
-}
-
-#home {
-  margin: 0 10px 0 10px;
-}
-
-#home:hover {
-  color: aliceblue;
-  text-transform: uppercase;
-  margin: 0 10px 0 10px;
-}
-
-#mission {
-  margin: 0 10px 0 10px;
-}
-
-#mission:hover {
-  color: aliceblue;
-  text-transform: uppercase;
-}
-
-#events {
-  margin: 0 10px 0 10px;
-}
-
-#events:hover {
-  color: aliceblue;
-  text-transform: uppercase;
-}
-
-#donations {
-  margin: 0 10px 0 10px;
-}
-
-#donations:hover {
-  color: aliceblue;
-  text-transform: uppercase;
-}
-
-
-/* EVENTS */
-.home-item {
-  font-family: 'Dangrek', cursive;
-  text-align: center;
-  display: flex;
-  margin: 35px 5px 20px 5px;
-}
-
-.barchart {
-  border: 1px solid rgb(82, 77, 77);
-  border-radius: 10px;
-  width: 550px;
-  height: 700px;
-  margin: auto;
-}
-
-.counter {
-  border: 1px solid rgb(82, 77, 77);
-  border-radius: 10px;
-  width: 600px;
-  height: 700px;
-  margin: auto;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 15px;
-  border: none;
-  outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-button:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ffffff,
-    #40ff00,
-    #ffd900,
-    #40ff00,
-    #0096e0,
-    #40ff00,
-    #ffd900,
-    #40ff00,
-    #ffffff
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing-button-85 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-@keyframes glowing-button-85 {
-  0% {
-    background-position: 0 0;
+  background-image: linear-gradient(
+    #2278fb,
+    #2278fb,
+    #2278fb,
+    #2278fb,
+    #3785fb,
+    #68deda,
+    #6bdfdb,
+    #6bdfdb
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-decoration: none;
+    color: rgb(82, 77, 77);
   }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
 
-button:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgb(82, 77, 77);
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-img {
-  border-radius: 10px;
-  margin: 15px;
-}
-
-/* MISSION */
-
-.mission {
-  font-family: 'Dangrek', cursive;
-  font-size: 20px;
-  text-align: center;
-  margin: 35px;
-}
-
-.mission-img>img {
-  display: flexbox;
-  height: 400px;
-  width: 400px;
-}
-
-.mission-section {
-  border: 1px solid rgb(82, 77, 77);
-  border-radius: 10px;
-}
-
-/* HOME */
-
-/* .carousel-inner {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 25px;
-  height: 600px;
-  width: 400px;
-  bottom: auto;
-}
-
-.carousel-caption {
-  position: relative;
-  left: auto;
-  right: auto;
-  padding-top: 25px;
-} */
-
-.events {
-  font-family: 'Dangrek', cursive;
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.event-header>h1 {
-  font-family: 'Just Another Hand', cursive;
-  text-align: center;
-  font-size: 50px;
-  margin-top: 15px;
-}
-
-.event-header>h2 {
-  font-family: 'Dangrek', cursive;
-  text-align: center;
-  font-size: 40px;
-}
-
-.single-event {
-  border: 1px solid rgb(82, 77, 77);
-  margin: 15px;
-  width: 375px;
-  height: 750px;
-  border-radius: 10px;
-}
-
-.single-event:hover {
-  box-shadow: 3px 8px 16px 3px rgba(37, 33, 33, 0.735);
-}
-
-.event-image {
-  margin-top: 5px;
-  width: 350px;
-  height: 300px;
-}
-
-/* DONATIONS */
-
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  font-family: 'Just Another Hand', cursive;
-  font-size: 25px;
-  margin: 20px 10px 10px 10px;
-}

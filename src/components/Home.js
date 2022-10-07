@@ -14,17 +14,17 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='event-header'>
+    <div className='home-header'>
       <h1>Join the party and give back to your community!</h1>
       <br />
       <h2>Our Events</h2>
-      <div className='events'>
+      <div className='home'>
         {item.map((eachItem, keyIndex) => {
           return (
             <Link state={eachItem} to='/events'>
               <Card key={keyIndex} className='single-event'>
                 <Card.Img
-                  className='event-image'
+                  className='home-image'
                   variant='top'
                   src={eachItem.image}
                 />

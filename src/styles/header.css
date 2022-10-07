@@ -1,0 +1,53 @@
+/* HEADER */
+.header {
+  font-family: 'Dangrek', cursive;
+}
+
+Nav {
+  font-family: 'Dangrek', cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+.nav {
+  border: 1.5px solid rgb(82, 77, 77);
+  border-radius: 10px;
+  margin: 1px 5px 1px 5px;
+}
+
+#home {
+  margin: 0 10px 0 10px;
+}
+
+#home:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+  margin: 0 10px 0 10px;
+}
+
+#mission {
+  margin: 0 10px 0 10px;
+}
+
+#mission:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+#events {
+  margin: 0 10px 0 10px;
+}
+
+#events:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+#donations {
+  margin: 0 10px 0 10px;
+}
+
+#donations:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}

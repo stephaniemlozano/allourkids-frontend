@@ -32,7 +32,7 @@ const Events = () => {
 
 
   return (
-    <div className='home-item'>
+    <div className='event-item'>
         <div className='barchart'>
         <h1>YOUR Donations At Work</h1>
         <BarChart 
@@ -52,9 +52,9 @@ const Events = () => {
           <img src={image} alt="event" width={300} />
 
           <h3>Today I donated...</h3>
-          <button onClick={() => setCounter1(counter1 + 1)}>{item1}</button>
-          <button onClick={() => setCounter2(counter2 + 1)}>{item2}</button>
-          <button onClick={() => setCounter3(counter3 + 1)}>{item3}</button>
+          <button id='b1' onClick={() => setCounter1(counter1 + 1)}>{item1}</button>
+          <button id='b2' onClick={() => setCounter2(counter2 + 1)}>{item2}</button>
+          <button id='b3' onClick={() => setCounter3(counter3 + 1)}>{item3}</button>
       </div>
     </div>
   )
