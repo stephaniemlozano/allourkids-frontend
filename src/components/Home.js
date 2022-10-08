@@ -7,7 +7,7 @@ const Home = () => {
   const [item, setItem] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:4001/')
+    fetch(process.env.REACT_APP_API_ENDPOINT)
       .then((response) => response.json())
       .then((data) => setItem(data))
       .catch((error) => console.error(error))

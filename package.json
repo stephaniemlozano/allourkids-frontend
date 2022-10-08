@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "aws s3 sync build/ s3://forthekids-ss",
+    "prod": "npm run build && npm run deploy"
   },
   "eslintConfig": {
     "extends": [
