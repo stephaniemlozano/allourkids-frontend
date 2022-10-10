@@ -1,4 +1,5 @@
 import BarChart from 'react-easy-bar-chart'
+import { Container, Row, Col, TabContainer } from 'react-bootstrap'
 import { useState } from 'react'
 import { useLocation} from 'react-router-dom'
 
@@ -10,10 +11,11 @@ const Events = () => {
   const location = useLocation({})
   const { image, eventname, item1, item2, item3 } = location.state
 
+  let value1 = (counter1 + 1)
   const barData = [
     {
       title: item1,
-      value: 12,
+      value: value1,
       color: '#f3a712'
     },
     {
@@ -32,18 +34,21 @@ const Events = () => {
 
 
   return (
-    <div className='event-item'>
-        <div className='barchart'>
-        <h1>YOUR Donations At Work</h1>
-        <BarChart 
-          xAxis = 'Items Needed'
-          yAxis = 'Amount Donated'
-          height={400}
-          width={800}
-          data={barData}
-        />
-      </div>
-      <div className='counter'>
+    <Container className='event-item'>
+        <Row className='barchart'>
+          <Col xs={6}>
+            <Col xs={6}>YOUR Donations At Work</Col>
+            <BarChart xs={6}
+              xAxis = 'Items Needed'
+              yAxis = 'Amount Donated'
+              height={400}
+              width={800}
+              data={barData}
+            />
+          </Col>
+      </Row>
+      <Row className='counter'>
+        <div xs={6}>
           <h2>Every Donation Counts!</h2>
             <h3>Your donation goes directly to a foster child </h3>
             <h3> in Pinellas and Pasco counties.</h3> 
@@ -52,11 +57,12 @@ const Events = () => {
           <img src={image} alt="event" width={300} />
 
           <h3>Today I donated...</h3>
-          <button id='b1' onClick={() => setCounter1(counter1 + 1)}>{item1}</button>
+          <button id='b1' onClick={() => setCounter1(barData[0].value)}>{item1}</button>
           <button id='b2' onClick={() => setCounter2(counter2 + 1)}>{item2}</button>
           <button id='b3' onClick={() => setCounter3(counter3 + 1)}>{item3}</button>
-      </div>
-    </div>
+        </div>
+      </Row>
+    </Container>
   )
 }
 
