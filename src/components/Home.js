@@ -8,9 +8,9 @@ const Home = () => {
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_ENDPOINT)
-      .then((response) => response.json())
-      .then((data) => setItem(data))
-      .catch((error) => console.error(error))
+      .then(response => response.json())
+      .then(data => setItem(data))
+      .catch(error => console.error(error))
   }, [])
 
   return (

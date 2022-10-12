@@ -1,7 +1,7 @@
 import BarChart from 'react-easy-bar-chart'
-import { Container, Row, Col, TabContainer } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { useState } from 'react'
-import { useLocation} from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 
 const Events = () => {
   const [counter1, setCounter1] = useState(0)
@@ -12,6 +12,9 @@ const Events = () => {
   const { image, eventname, item1, item2, item3 } = location.state
 
   let value1 = (counter1 + 1)
+  let value2 = (counter2 + 1)
+  let value3 = (counter3 + 1)
+
   const barData = [
     {
       title: item1,
@@ -20,12 +23,12 @@ const Events = () => {
     },
     {
       title: item2,
-      value: 35,
+      value: value2,
       color: '#29335c'
     },
     {
       title: item3,
-      value: 20,
+      value: value3,
       color: '#db2b39'
     }
   ]
@@ -58,9 +61,10 @@ const Events = () => {
 
           <h3>Today I donated...</h3>
           <button id='b1' onClick={() => setCounter1(barData[0].value)}>{item1}</button>
-          <button id='b2' onClick={() => setCounter2(counter2 + 1)}>{item2}</button>
-          <button id='b3' onClick={() => setCounter3(counter3 + 1)}>{item3}</button>
+          <button id='b2' onClick={() => setCounter2(barData[1].value)}>{item2}</button>
+          <button id='b3' onClick={() => setCounter3(barData[2].value)}>{item3}</button>
         </div>
+        <Link state={location.state} to='/admin' className='link'>...</Link>
       </Row>
     </Container>
   )

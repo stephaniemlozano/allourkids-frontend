@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { Card } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const Admin = () => {
   const [eventForm, setEventForm] = useState({})
   const navigate = useNavigate()
+  const location = useLocation()
+  const { image, eventname, date, time, address } = location.state
+
 
   const addEventForm = (event) => {
     setEventForm({ ...eventForm, [event.target.name]: event.target.value })
@@ -13,6 +16,7 @@ const Admin = () => {
 
   const addEventBtn = (event) => {
     event.preventDefault()
+
     fetch(process.env.REACT_APP_API_ENDPOINT, {
       method: 'POST',
       headers: {
@@ -20,20 +24,32 @@ const Admin = () => {
       },
       body: JSON.stringify(eventForm),
     })
-    .then(response => response.json)
+    .then(response => response.json())
     .then(data => setEventForm(data))
-    .catch(error => console.error)
+    .catch(error => console.error(error))
 
     navigate('/')
   }
 
-  // 2. create form to delete event by ID
 
-  // 3. create form to update event by ID
+  const deleteEventBtn = (event) => {
+    event.preventDefault()
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}?eventname=${eventname}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(response => response.json())
+    .then(data => setEventForm(data))
+    .catch(error => console.error(error))
+    
+    navigate('/')
+  }
 
   return (
     <div>
-      <Card>
+      <Card className='form'>
         <Card.Body>
           <Card.Title>
             <h1>Add an Event</h1>
@@ -49,7 +65,7 @@ const Admin = () => {
             />
             <br />
 
-            <label htmlFor=''>Event Name: </label>
+            <label>Event Name: </label>
             <input
               onChange={(event) => addEventForm(event)}
               type='text'
@@ -59,7 +75,7 @@ const Admin = () => {
             />
             <br />
 
-            <label htmlFor=''>Date: </label>
+            <label>Date: </label>
             <input
               onChange={(event) => addEventForm(event)}
               type='text'
@@ -123,6 +139,18 @@ const Admin = () => {
           </form>
         </Card.Body>
       </Card>
+      <Card>
+          <Card.Body>
+            <Card.Title>
+              <img src={image} alt='' />
+              <h1>Event: {eventname}</h1>
+              <h3>Date: {date} @ {time}</h3>
+              <h4>Address: {address} </h4>
+            </Card.Title>
+            <br />
+            <button onClick={deleteEventBtn}>Delete Event</button>
+          </Card.Body>
+        </Card>
     </div>
   )
 }
