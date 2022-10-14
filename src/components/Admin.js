@@ -6,7 +6,7 @@ const Admin = () => {
   const [eventForm, setEventForm] = useState({})
   const navigate = useNavigate()
   const location = useLocation()
-  const { image, eventname, date, time, address } = location.state
+  const { image, eventname, date, time, address, item1, item2, item3 } = location.state
 
 
   const addEventForm = (event) => {
@@ -25,12 +25,13 @@ const Admin = () => {
       body: JSON.stringify(eventForm),
     })
     .then(response => response.json())
-    .then(data => setEventForm(data))
+    .then(data => {
+      const {apiData} = data
+      setEventForm(apiData)})
     .catch(error => console.error(error))
 
     navigate('/')
   }
-
 
   const deleteEventBtn = (event) => {
     event.preventDefault()
@@ -41,9 +42,28 @@ const Admin = () => {
       }
     })
     .then(response => response.json())
-    .then(data => setEventForm(data))
+    .then(data => { 
+      const {apiData} = data
+      setEventForm(apiData)})
     .catch(error => console.error(error))
     
+    navigate('/')
+  }
+
+  const updateEventBtn = (event) => {
+    event.preventDefault()
+
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}?eventname=${eventname}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(eventForm),
+    })
+    .then(response => response.json())
+    .then(data => setEventForm(data))
+    .catch(error => console.error(error))
+
     navigate('/')
   }
 
@@ -136,18 +156,19 @@ const Admin = () => {
             <br />
 
             <button onClick={addEventBtn}>Add Event</button>
+            <button onClick={updateEventBtn}>Update Event</button>
           </form>
         </Card.Body>
       </Card>
       <Card>
           <Card.Body>
             <Card.Title>
-              <img src={image} alt='' />
               <h1>Event: {eventname}</h1>
               <h3>Date: {date} @ {time}</h3>
               <h4>Address: {address} </h4>
+              <h4>Items: {item1}, {item2}, {item3}</h4>
+              <img src={image} alt='' />
             </Card.Title>
-            <br />
             <button onClick={deleteEventBtn}>Delete Event</button>
           </Card.Body>
         </Card>

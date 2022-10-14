@@ -4,25 +4,30 @@ import { Card } from 'react-bootstrap'
 
 
 const Home = () => {
-  const [item, setItem] = useState([])
+  const [items, setItems] = useState([])
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_ENDPOINT)
       .then(response => response.json())
-      .then(data => setItem(data))
+      .then(data => {
+        const {apiData} = data
+        setItems(apiData)
+      })
       .catch(error => console.error(error))
   }, [])
 
+console.log(items)
   return (
     <div className='home-header'>
       <h1>Join the party and give back to your community!</h1>
       <br />
       <h2>Our Events</h2>
+   
       <div className='home'>
-        {item.map((eachItem, keyIndex) => {
+        {  items.map((eachItem) => {
           return (
-            <Link state={eachItem} to='/events'>
-              <Card key={keyIndex} className='single-event'>
+            <Link state={eachItem} to='/events' key={eachItem._id}>
+              <Card className='single-event'>
                 <Card.Img
                   className='home-image'
                   variant='top'
@@ -33,19 +38,25 @@ const Home = () => {
                     <h3>{eachItem.eventname}</h3>
                   </Card.Title>
                   <Card.Text>
-                    <h4>Date: {eachItem.date}</h4>
-                    <h4>Time: {eachItem.time}</h4>
-                    <h4>Address: {eachItem.address}</h4>
+                    <span>Date: {eachItem.date}</span>
                     <br />
-                    <h4>Donations Being Collected:</h4>
-                      <p>1. {eachItem.item1}</p>
-                      <p>2. {eachItem.item2}</p>
-                      <p>3. {eachItem.item3}</p>
+                    <span>Time: {eachItem.time}</span>
+                    <br />
+                    <span>Address: {eachItem.address}</span>
+                    <br />
+                    <span>Donations Being Collected:</span>
+                    <br />
+                      <span>1. {eachItem.item1}</span>
+                      <br />
+                      <span>2. {eachItem.item2}</span>
+                      <br />
+                      <span>3. {eachItem.item3}</span>
+                      <br />
                   </Card.Text>
                 </Card.Body>
               </Card>
             </Link>
-          )
+          ) 
         })}
       </div>
     </div>
