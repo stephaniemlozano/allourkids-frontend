@@ -1,24 +1,43 @@
 import { Card } from 'react-bootstrap'
-import imageD from '../images/donatetoday.png'
 
 const Donations = () => {
   return (
     <div className='donations'>
-      <h1>Donation Guidelines</h1>
+      <div className='donation-img'>
+        <img
+          src='https://stephanie-buckette.s3.amazonaws.com/heart.png'
+          alt='heart'
+          width={300}
+          />
+        <img
+          src='https://stephanie-buckette.s3.amazonaws.com/thankyou.png'
+          alt='thank you'
+          width={500}
+          />
+        <img
+          src='https://stephanie-buckette.s3.amazonaws.com/heart2.png'
+          alt='heart'
+          width={300}
+          />
+      </div>
+          <h1>Donation Guidelines</h1>
       <div className='donation-header'>
-        <img src={imageD} alt='donate today' width={300} />
-        <p>
-          1. We can only accept new items with the exception of clothing.
-          <br />
-          2. Clothing can be new or gently used/like new. All other items must
-          be new.
-          <br />
-          3. We accept sizes from preemie to teen/adult 4x.
-          <br />
-          4. Items with holes, stains, fading, past events that they did not
-          attend cannot be accepted. As well as handmade clothing, used toys,
-          used school supplies and open hygiene products.
-        </p>
+        <ul>
+          <li>We can only accept new items with the exception of clothing.</li>
+          <li>
+            Clothing can be new or gently used/like new. All other items must be
+            new.
+          </li>
+          <li>We accept sizes from preemie to teen/adult 4x.</li>
+          <li>
+            Items with holes, stains, fading, past events that they did not
+            attend cannot be accepted.
+          </li>
+          <li>
+            Handmade clothing, used toys, used school supplies and open hygiene
+            products also cannot be accepted.
+          </li>
+        </ul>
       </div>
       <h2>Items We Need</h2>
       <div className='donation-list'>

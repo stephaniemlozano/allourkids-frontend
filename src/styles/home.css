@@ -17,28 +17,35 @@
 } */
 
 .home {
-  font-family: 'Dangrek', cursive;
-  font-size: 20px;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.home-header > h1 {
-  font-family: 'Just Another Hand', cursive;
+.home-header h1 {
+  font-family: 'Dangrek', cursive;
   text-align: center;
-  font-size: 50px;
-  margin-top: 15px;
+  font-size: 40px;
+  margin: 40px auto 5px auto;
 }
 
-.home-header > h2 {
-  font-family: 'Dangrek', cursive;
+.home-header h2 {
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   font-size: 40px;
 }
 
+.header-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px auto 10px auto;
+}
+
 .single-event {
+  font-family: 'Poppins', sans-serif;
+  color: white;
   border: 1px solid rgb(82, 77, 77);
   margin: 15px;
   width: 375px;
@@ -47,7 +54,7 @@
 }
 
 .single-event:hover {
-  box-shadow: 3px 8px 16px 3px rgba(37, 33, 33, 0.735);
+  box-shadow: 3px 8px 16px 3px rgba(200, 193, 193, 0.735);
 }
 
 .home-image {
@@ -55,4 +62,27 @@
   width: 350px;
   height: 300px;
 }
+
+.title h4 {
+  font-weight: 700;
+  margin: 30px auto;
+  margin-bottom: 30px;
+}
+
+ul {
+  font-size: 18px;
+  font-weight: 700;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+li {
+  margin: 10px;
+}
+
+.event-detail {
+  margin-top: 50px;
+}
+
+
 

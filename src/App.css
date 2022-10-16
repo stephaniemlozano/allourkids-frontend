@@ -1,10 +1,11 @@
- @import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Just+Another+Hand&display=swap');
- @import './styles/header.css';
- @import './styles/home.css';
- @import './styles/events.css';
- @import './styles/mission.css';
- @import './styles/donations.css';
- @import './styles/footer.css';
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Poppins:wght@400;700&display=swap');
+@import './styles/header.css';
+@import './styles/home.css';
+@import './styles/events.css';
+@import './styles/mission.css';
+@import './styles/donations.css';
+@import './styles/footer.css';
+@import './styles/admin.css';
 
 *,
 *::after,
@@ -16,25 +17,25 @@
 
   body {
     background-image: linear-gradient(
-    #2278fb,
-    #2278fb,
-    #2278fb,
-    #2278fb,
-    #3785fb,
-    #68deda,
-    #6bdfdb,
-    #6bdfdb
+    #00193B,
+    #00193B,
+    #595959
     );
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: rgb(82, 77, 77);
+    color: white;
     scroll-behavior: smooth;
+    flex-wrap: wrap;
   }
 
   a:link, a:visited {
     text-decoration: none;
-    color: rgb(82, 77, 77);
+    color: rgb(151, 151, 151);
   }
 
+  img {
+    border-radius: 10px;
+    margin: 5px;
+  }
   
 

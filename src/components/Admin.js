@@ -68,7 +68,7 @@ const Admin = () => {
   }
 
   return (
-    <div>
+    <div className='admin'>
       <Card className='form'>
         <Card.Body>
           <Card.Title>

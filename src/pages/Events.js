@@ -40,7 +40,6 @@ const Events = () => {
   } 
 
   console.log(`Items donated: ${item1} - ${counter1}, ${item2} - ${counter2}, ${item3} - ${counter3}`)
-  console.log(doughnutData.datasets.value1)
 
   return (
     <Container className='event-item'>
@@ -49,6 +48,7 @@ const Events = () => {
             <Col xs={6}>YOUR Donations At Work</Col>
             <Doughnut xs={6}
               data={doughnutData}
+              options={doughnutData.options}
             />
           </Col>
       </Row>
