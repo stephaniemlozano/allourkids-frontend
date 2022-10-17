@@ -7,10 +7,7 @@ import linkedin from '../images/linkedin.png'
 const Mission = () => {
   return (
     <div className='mission'>
-      <div className='mission-img'>
-        <img src={imageA} alt='volunteers sorting' />
-        <img src={imageB} alt='volunteers sorting' />
-      </div>
+      <img src="https://stephanie-buckette.s3.amazonaws.com/missionhero.png" alt="kids playing" width={650}/>
       <div className='mission-section'>
         <h1>Our Mission</h1>
         <p>
@@ -31,7 +28,6 @@ const Mission = () => {
           bags.
         </p>
       </div>
-      <br />
       <div className='mission-section'>
         <h2>What sets us apart from the rest?</h2>
         <p>
@@ -43,7 +39,10 @@ const Mission = () => {
           the items live and having fun in the process.
         </p>
       </div>
-      <br />
+      <div className='mission-img'>
+        <img src={imageA} alt='volunteers sorting' />
+        <img src={imageB} alt='volunteers sorting' />
+      </div>
       <div className='mission-section'>
         <h2>How can you help?</h2>
         <p>
@@ -54,7 +53,6 @@ const Mission = () => {
           For more questions call 727-456-0600 and ask for Community Engagement.
         </h2>
       </div>
-      <br />
       <div className='mission-section'>
         <h2>Check us out on Social Media!</h2>
         <a

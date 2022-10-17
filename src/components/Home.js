@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
-import girls from '../images/girls-home.jpg'
-import hands from '../images/hands-home.jpg'
-import teens from '../images/teens-home.jpg'
 
 const Home = () => {
   const [items, setItems] = useState([])
@@ -21,14 +18,13 @@ const Home = () => {
   console.log(items)
   return (
     <div className='home-header'>
-      <h1>Join the party and give back to your community!</h1>
-      <div className='header-img'>
-        <img src={girls} alt="kids playing" width={400} />
-        <img src={hands} alt="helping hand" width={400} />
-        <img src={teens} alt="kids playing" width={400} />
-      </div>
-      <h2>Our Events</h2>
-
+      <img
+        className='header-img'
+        src='https://stephanie-buckette.s3.amazonaws.com/hero.png'
+        alt='kids playing'
+        width={650}
+      />
+      <h1>Our Events</h1>
       <div className='home'>
         {items.map((eachItem) => {
           return (
@@ -63,6 +59,7 @@ const Home = () => {
             </Link>
           )
         })}
+        <h1>Join the party and give back to your community!</h1>
       </div>
     </div>
   )

@@ -7,15 +7,23 @@
   margin: 35px;
 }
 
+.mission img {
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
+}
+
 .mission-img img {
-  display: flexbox;
   height: 400px;
   width: 400px;
+  display: inline-block;
+  margin: 10px;
 }
 
 .mission-section {
   border: 1px solid rgb(82, 77, 77);
   border-radius: 10px;
+  margin: 25px;
 }
 
 .mission-section p {
@@ -28,3 +36,7 @@
   text-transform: uppercase;
 }
 
+.mission-section a {
+  display: inline-block;
+  margin: 0px 10px;
+}

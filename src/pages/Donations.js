@@ -5,19 +5,9 @@ const Donations = () => {
     <div className='donations'>
       <div className='donation-img'>
         <img
-          src='https://stephanie-buckette.s3.amazonaws.com/heart.png'
-          alt='heart'
-          width={300}
-          />
-        <img
-          src='https://stephanie-buckette.s3.amazonaws.com/thankyou.png'
+          src='https://stephanie-buckette.s3.amazonaws.com/donationhero.png'
           alt='thank you'
-          width={500}
-          />
-        <img
-          src='https://stephanie-buckette.s3.amazonaws.com/heart2.png'
-          alt='heart'
-          width={300}
+          width={650}
           />
       </div>
           <h1>Donation Guidelines</h1>
@@ -62,6 +52,7 @@ const Donations = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+
         <Card className='list-card'>
           <Card.Body>
             <Card.Title className='title'>
@@ -78,6 +69,7 @@ const Donations = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+
         <Card className='list-card'>
           <Card.Body>
             <Card.Title className='title'>
@@ -96,10 +88,11 @@ const Donations = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+
         <Card className='list-card'>
           <Card.Body>
             <Card.Title className='title'>
-              <h3>School Supplies/Other</h3>
+              <h3>School Supplies</h3>
             </Card.Title>
             <Card.Text>
               <h4>Backpacks</h4>
@@ -109,7 +102,21 @@ const Donations = () => {
               <h4>Duffle Bags</h4>
               <h4>Toys</h4>
               <h4>Bikes</h4>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+
+        <Card className='list-card'>
+          <Card.Body>
+            <Card.Title className='title'>
+              <h3>Other</h3>
+            </Card.Title>
+            <Card.Text>
               <h4>New/Like New Furniture</h4>
+              <h4>Baby bouncers</h4>
+              <h4>High chairs</h4>
+              <h4>Carriers</h4>
+              <h4>New Carseats</h4>
             </Card.Text>
           </Card.Body>
         </Card>
