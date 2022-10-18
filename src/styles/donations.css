@@ -41,16 +41,20 @@
 
 .list-card {
   font-family: Poppins, sans-serif;
-  font-weight: 400;
+  font-size: 15px;
   border: 1px solid rgb(82, 77, 77);
   border-radius: 10px;
   margin: 25px;
   width: 300px;
-  height: 450px;
+  height: 525px;
 }
 
 .list-card:hover {
   box-shadow: 3px 8px 16px 3px rgba(200, 193, 193, 0.735);
+}
+
+.list-card img {
+  width: 260px;
 }
 
 .title {

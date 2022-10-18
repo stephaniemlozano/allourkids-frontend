@@ -31,30 +31,9 @@ const Donations = () => {
       </div>
       <h2>Items We Need</h2>
       <div className='donation-list'>
-        <Card className='list-card'>
+      <Card className='list-card'>
           <Card.Body>
-            <Card.Title className='title'>
-              <h3>Clothing Items</h3>
-            </Card.Title>
-            <Card.Text>
-              <h4>Tops</h4>
-              <h4>Basic T-Shirts</h4>
-              <h4>Bottoms</h4>
-              <h4>Athletic Shorts</h4>
-              <h4>Shorts</h4>
-              <h4>Jeans</h4>
-              <h4>Sweaters/Jackets</h4>
-              <h4>Pajamas</h4>
-              <h4>Socks</h4>
-              <h4>Underwear</h4>
-              <h4>Bras</h4>
-              <h4>Sneakers</h4>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
-        <Card className='list-card'>
-          <Card.Body>
+            <img src="https://stephanie-buckette.s3.amazonaws.com/babyitems.png" alt="baby items" />
             <Card.Title className='title'>
               <h3>Baby Items</h3>
             </Card.Title>
@@ -72,6 +51,28 @@ const Donations = () => {
 
         <Card className='list-card'>
           <Card.Body>
+            <img src="https://stephanie-buckette.s3.amazonaws.com/clothingitems.png" alt="clothing items" />
+            <Card.Title className='title'>
+              <h3>Clothing Items</h3>
+            </Card.Title>
+            <Card.Text>
+              <h4>Tops</h4>
+              <h4>Basic T-Shirts</h4>
+              <h4>Athletic Shorts</h4>
+              <h4>Shorts</h4>
+              <h4>Jeans</h4>
+              <h4>Sweaters/Jackets</h4>
+              <h4>Pajamas</h4>
+              <h4>Underwear/Socks</h4>
+              <h4>Bras</h4>
+              <h4>Sneakers</h4>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+
+        <Card className='list-card'>
+          <Card.Body>
+            <img src="https://stephanie-buckette.s3.amazonaws.com/hygieneitems.png" alt="hygiene items"  />
             <Card.Title className='title'>
               <h3>Hygiene Products</h3>
             </Card.Title>
@@ -91,6 +92,7 @@ const Donations = () => {
 
         <Card className='list-card'>
           <Card.Body>
+            <img src="https://stephanie-buckette.s3.amazonaws.com/schoolsupplies.png" alt="school supplies" />
             <Card.Title className='title'>
               <h3>School Supplies</h3>
             </Card.Title>
@@ -108,6 +110,7 @@ const Donations = () => {
 
         <Card className='list-card'>
           <Card.Body>
+            <img src="https://stephanie-buckette.s3.amazonaws.com/other.png" alt="other" />
             <Card.Title className='title'>
               <h3>Other</h3>
             </Card.Title>
