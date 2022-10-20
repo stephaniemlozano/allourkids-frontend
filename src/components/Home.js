@@ -20,7 +20,7 @@ const Home = () => {
     <div className='home-header'>
       <img
         className='header-img'
-        src='https://stephanie-buckette.s3.amazonaws.com/hero.png'
+        src='https://stephanie-buckette.s3.amazonaws.com/hero-image-2.webp'
         alt='kids playing'
         width={650}
       />

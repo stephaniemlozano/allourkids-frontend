@@ -33,11 +33,15 @@
   border-radius: 10px;
   width: 600px;
   height: 700px;
-  margin: auto;
+  margin: 10px auto;
 }
 
-.counter Col{
+.counter h2{
   font-size: 30px;
+}
+
+.counter h3 {
+  font-family: 'Poppins', sans-serif;
 }
 
 button {

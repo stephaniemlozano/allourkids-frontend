@@ -5,9 +5,8 @@ const Donations = () => {
     <div className='donations'>
       <div className='donation-img'>
         <img
-          src='https://stephanie-buckette.s3.amazonaws.com/donationhero.png'
+          src='https://stephanie-buckette.s3.amazonaws.com/donations-hero.webp'
           alt='thank you'
-          width={650}
           />
       </div>
           <h1>Donation Guidelines</h1>

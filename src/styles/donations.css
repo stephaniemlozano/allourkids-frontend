@@ -29,6 +29,10 @@
   margin-top: 20px;
 }
 
+.donation-img img {
+  width: 98%;
+}
+
 .donation-header img {
   margin: 15px;
 }

@@ -58,7 +58,7 @@ const Events = () => {
             <h3>Your donation goes directly to a foster child </h3>
             <h3> in Pinellas and Pasco counties.</h3> 
           <h2>THANK YOU for your support of:</h2>
-          <h2>{eventname}</h2>
+          <h3>{eventname}</h3>
           <img src={image} alt="event" width={300} />
 
           <h3>Today I donated...</h3>

@@ -7,7 +7,7 @@ import linkedin from '../images/linkedin.png'
 const Mission = () => {
   return (
     <div className='mission'>
-      <img src="https://stephanie-buckette.s3.amazonaws.com/missionhero.png" alt="kids playing" width={650}/>
+      <img src="https://stephanie-buckette.s3.amazonaws.com/mission-hero.webp" alt="kids playing" className='m-hero'/>
       <div className='mission-section'>
         <h1>Our Mission</h1>
         <p>
