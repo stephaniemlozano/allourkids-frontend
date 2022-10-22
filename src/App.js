@@ -7,6 +7,9 @@ import Mission from './pages/Mission'
 import Events from './pages/Events'
 import Donations from './pages/Donations'
 import Admin from './components/Admin'
+import Login from './components/Login'
+import SingleEvent from './components/SingleEvent'
+import ProtectedRoutes from './components/ProtectedRoutes'
 
 function App() {
   return (
@@ -17,9 +20,12 @@ function App() {
         <Route path='/mission' element={<Mission />} />
         <Route path='/events' element={<Events />} />
         <Route path='/donations' element={<Donations />} />
-        <Route path='/admin' element={<Admin />} />
+        <Route path='/login' element={<Login />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/single-event' element={<SingleEvent />} />
+        </Route>
         <Route path='*' element={<h1>Oops! Invalid page.</h1>} />
-        {/* <Route path='/mobile' element={<Mobile />} /> */}
       </Routes>
       <br />
       <Footer />

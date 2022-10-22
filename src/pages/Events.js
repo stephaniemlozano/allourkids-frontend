@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import { useState } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
@@ -66,7 +66,6 @@ const Events = () => {
           <button id='b2' onClick={() => setCounter2(value2)}>{item2}</button>
           <button id='b3' onClick={() => setCounter3(value3)}>{item3}</button>
         </div>
-        <Link state={location.state} to='/admin' className='link'>...</Link>
       </Row>
     </Container>
   )

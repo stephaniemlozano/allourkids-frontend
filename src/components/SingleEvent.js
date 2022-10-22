@@ -1,58 +1,57 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
-import { Link, useNavigate } from 'react-router-dom'
 
-const Admin = () => {
+const SingleEvent = () => {
   const [eventForm, setEventForm] = useState({})
+  const location = useLocation()
   const navigate = useNavigate()
-  const [items, setItems] = useState([])
 
-  useEffect(() => {
-    fetch(process.env.REACT_APP_API_ENDPOINT)
+  const { image, eventname, date, time, address, item1, item2, item3 } =
+    location.state
+
+  const deleteEventBtn = (event) => {
+    event.preventDefault()
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}?eventname=${eventname}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         const { apiData } = data
-        setItems(apiData)
+        setEventForm(apiData)
       })
       .catch((error) => console.error(error))
-  }, [])
-  console.log(items)
 
+    navigate('/')
+  }
 
   const addEventForm = (event) => {
     setEventForm({ ...eventForm, [event.target.name]: event.target.value })
     console.log(event.target.name)
   }
 
-  const addEventBtn = (event) => {
+  const updateEventBtn = (event) => {
     event.preventDefault()
 
-    fetch(process.env.REACT_APP_API_ENDPOINT, {
-      method: 'POST',
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}?eventname=${eventname}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(eventForm),
     })
-    .then(response => response.json())
-    .then(data => {
-      const {apiData} = data
-      setEventForm(apiData)})
-    .catch(error => console.error(error))
+      .then((response) => response.json())
+      .then((data) => setEventForm(data))
+      .catch((error) => console.error(error))
 
     navigate('/')
   }
-
-  const handleLogOut = () => {
-    localStorage.clear()
-    navigate('/')
-  }
-
   return (
-    <div className='admin'>      
-      <div>
-      <button onClick={handleLogOut}>Log Out</button>
-      </div>
+    <div className='admin'>
+      <h1>Update/Delete Event</h1>
       <Card className='form'>
         <Card.Body>
           <Card.Title>
@@ -137,52 +136,30 @@ const Admin = () => {
               name='item3'
               id='item3'
             />
-            <br />
-
-            <button onClick={addEventBtn}>Add Event</button>
           </form>
+          <button onClick={updateEventBtn}>Update Event</button>
+          
         </Card.Body>
-      </Card> 
-
-      <h1>Select Event To Update/Delete</h1>
-      <div className='home'>
-        {items.map((eachItem) => {
-          return (
-            <Link state={eachItem} to='/single-event' key={eachItem._id}>
-              <Card className='single-event'>
-                <Card.Img
-                  className='home-image'
-                  variant='top'
-                  src={eachItem.image}
-                />
-                <Card.Body>
-                  <Card.Title className='title'>
-                    <h4>{eachItem.eventname}</h4>
-                  </Card.Title>
-                  <Card.Text>
-                    <span className=''>Donations Being Collected:</span>
-                    <br />
-                    <ul>
-                      <li>{eachItem.item1}</li>
-                      <li>{eachItem.item2}</li>
-                      <li>{eachItem.item3}</li>
-                    </ul>
-                  </Card.Text>
-                  <Card.Text className='event-detail'>
-                    <span>{eachItem.date} at</span>
-                    <span> {eachItem.time}</span>
-                    <br />
-                    <span>{eachItem.address}</span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Link>
-          )
-        })}
-      </div>
-      
+      </Card>
+      <br />
+      <Card>
+        <Card.Body>
+          <Card.Title>
+            <h2>Event: {eventname}</h2>
+            <h3>
+              Date: {date} @ {time}
+            </h3>
+            <h4>Address: {address} </h4>
+            <h4>
+              Items: {item1}, {item2}, {item3}
+            </h4>
+            <img src={image} alt='' />
+          </Card.Title>
+          <button onClick={deleteEventBtn}>Delete Event</button>
+        </Card.Body>
+      </Card>
     </div>
   )
 }
 
-export default Admin
+export default SingleEvent
