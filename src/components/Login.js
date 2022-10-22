@@ -7,7 +7,7 @@ const Login = () => {
   
   const formSubmit = (event) => {
     event.preventDefault()
-    fetch(process.env.REACT_APP_API_ENDPOINT, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
