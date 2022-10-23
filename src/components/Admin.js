@@ -50,9 +50,10 @@ const Admin = () => {
 
   return (
     <div className='admin'>      
-      <div>
+      <div className='logout-btn'>
       <button onClick={handleLogOut}>Log Out</button>
       </div>
+      <br />
       <Card className='form'>
         <Card.Body>
           <Card.Title>

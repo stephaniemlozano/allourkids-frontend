@@ -51,3 +51,12 @@ Nav {
   color: aliceblue;
   text-transform: uppercase;
 }
+
+#login {
+  margin: 0 10px 0 10px;
+}
+
+#login:hover {
+  color: aliceblue;
+  text-transform: uppercase;
+}

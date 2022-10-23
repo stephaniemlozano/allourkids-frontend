@@ -25,7 +25,7 @@ const SingleEvent = () => {
       })
       .catch((error) => console.error(error))
 
-    navigate('/')
+    navigate('/admin')
   }
 
   const addEventForm = (event) => {
@@ -47,15 +47,14 @@ const SingleEvent = () => {
       .then((data) => setEventForm(data))
       .catch((error) => console.error(error))
 
-    navigate('/')
+    navigate('/admin')
   }
   return (
     <div className='admin'>
-      <h1>Update/Delete Event</h1>
       <Card className='form'>
         <Card.Body>
           <Card.Title>
-            <h1>Add an Event</h1>
+            <h1>Update an Event</h1>
           </Card.Title>
           <form className='add-form'>
             <label htmlFor=''>Image: </label>
@@ -136,9 +135,8 @@ const SingleEvent = () => {
               name='item3'
               id='item3'
             />
-          </form>
           <button onClick={updateEventBtn}>Update Event</button>
-          
+          </form>
         </Card.Body>
       </Card>
       <br />

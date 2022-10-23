@@ -6,6 +6,8 @@
 @import './styles/donations.css';
 @import './styles/footer.css';
 @import './styles/admin.css';
+@import './styles/login.css';
+@import './styles/single-event.css';
 
 *,
 *::after,

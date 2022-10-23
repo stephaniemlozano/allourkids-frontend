@@ -23,7 +23,7 @@ const Login = () => {
   }
 
   return (
-    <div className='login-form'>
+    <div className='login'>
       <form action='submit' onSubmit={formSubmit} method='post'>
         <h2>Log In</h2>
         <label htmlFor=''>Email:</label>
@@ -34,6 +34,7 @@ const Login = () => {
             setLoginForm({ ...loginForm, email: event.target.value })
           }
         />
+        <br />
         <label htmlFor=''>Password:</label>
         <input
           type='password'
@@ -42,6 +43,7 @@ const Login = () => {
             setLoginForm({ ...loginForm, password: event.target.value })
           }
         />
+        <br />
         <button type='submit'>Log In</button>
       </form>
     </div>
