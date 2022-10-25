@@ -24,8 +24,9 @@ const SingleEvent = () => {
         setEventForm(apiData)
       })
       .catch((error) => console.error(error))
-
+    
     navigate('/admin')
+    window.location.reload()
   }
 
   const addEventForm = (event) => {
@@ -48,6 +49,7 @@ const SingleEvent = () => {
       .catch((error) => console.error(error))
 
     navigate('/admin')
+    window.location.reload()
   }
   return (
     <div className='admin'>
@@ -80,7 +82,7 @@ const SingleEvent = () => {
             <label>Date: </label>
             <input
               onChange={(event) => addEventForm(event)}
-              type='text'
+              type='date'
               placeholder='ex: November 22, 2020'
               name='date'
               id='date'
@@ -90,7 +92,7 @@ const SingleEvent = () => {
             <label htmlFor=''>Time: </label>
             <input
               onChange={(event) => addEventForm(event)}
-              type='text'
+              type='time'
               placeholder='ex: 6:22 AM'
               name='time'
               id='time'

@@ -6,6 +6,7 @@ const Admin = () => {
   const [eventForm, setEventForm] = useState({})
   const navigate = useNavigate()
   const [items, setItems] = useState([])
+  const [submit, setSubmit] = useState(false)
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_ENDPOINT)
@@ -15,9 +16,8 @@ const Admin = () => {
         setItems(apiData)
       })
       .catch((error) => console.error(error))
-  }, [])
+  }, [submit])
   console.log(items)
-
 
   const addEventForm = (event) => {
     setEventForm({ ...eventForm, [event.target.name]: event.target.value })
@@ -34,13 +34,14 @@ const Admin = () => {
       },
       body: JSON.stringify(eventForm),
     })
-    .then(response => response.json())
-    .then(data => {
-      const {apiData} = data
-      setEventForm(apiData)})
-    .catch(error => console.error(error))
+      .then((response) => response.json())
+      .then((data) => {
+        const { apiData } = data
+        setEventForm(apiData)
+      })
+      .catch((error) => console.error(error))
 
-    navigate('/')
+    setSubmit(true)
   }
 
   const handleLogOut = () => {
@@ -49,9 +50,9 @@ const Admin = () => {
   }
 
   return (
-    <div className='admin'>      
+    <div className='admin'>
       <div className='logout-btn'>
-      <button onClick={handleLogOut}>Log Out</button>
+        <button onClick={handleLogOut}>Log Out</button>
       </div>
       <br />
       <Card className='form'>
@@ -143,7 +144,7 @@ const Admin = () => {
             <button onClick={addEventBtn}>Add Event</button>
           </form>
         </Card.Body>
-      </Card> 
+      </Card>
 
       <h1>Select Event To Update/Delete</h1>
       <div className='home'>
@@ -181,7 +182,6 @@ const Admin = () => {
           )
         })}
       </div>
-      
     </div>
   )
 }
