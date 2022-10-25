@@ -82,7 +82,7 @@ const SingleEvent = () => {
             <label>Date: </label>
             <input
               onChange={(event) => addEventForm(event)}
-              type='date'
+              type='text'
               placeholder='ex: November 22, 2020'
               name='date'
               id='date'
@@ -92,7 +92,7 @@ const SingleEvent = () => {
             <label htmlFor=''>Time: </label>
             <input
               onChange={(event) => addEventForm(event)}
-              type='time'
+              type='text'
               placeholder='ex: 6:22 AM'
               name='time'
               id='time'
