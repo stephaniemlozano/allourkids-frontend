@@ -6,7 +6,7 @@ const Admin = () => {
   const [eventForm, setEventForm] = useState({})
   const navigate = useNavigate()
   const [items, setItems] = useState([])
-  const [submit, setSubmit] = useState(false)
+  // const [submit, setSubmit] = useState(false)
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_ENDPOINT)
@@ -16,7 +16,7 @@ const Admin = () => {
         setItems(apiData)
       })
       .catch((error) => console.error(error))
-  }, [submit])
+  }, [])
   console.log(items)
 
   const addEventForm = (event) => {
@@ -41,7 +41,8 @@ const Admin = () => {
       })
       .catch((error) => console.error(error))
 
-    setSubmit(true)
+    // setSubmit(true)
+    window.location.reload()
   }
 
   const handleLogOut = () => {
