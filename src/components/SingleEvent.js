@@ -24,9 +24,9 @@ const SingleEvent = () => {
         setEventForm(apiData)
       })
       .catch((error) => console.error(error))
-    
-    navigate('/admin')
-    window.location.reload()
+      
+      navigate('/admin')
+      window.location.reload()
   }
 
   const addEventForm = (event) => {
