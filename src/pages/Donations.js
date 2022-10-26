@@ -32,7 +32,7 @@ const Donations = () => {
       <div className='donation-list'>
       <Card className='list-card'>
           <Card.Body>
-            <img src="https://stephanie-buckette.s3.amazonaws.com/babyitems.png" alt="baby items" />
+            <img src="https://stephanie-buckette.s3.amazonaws.com/heart2.png" alt="baby items" />
             <Card.Title className='title'>
               <h3>Baby Items</h3>
             </Card.Title>
@@ -50,7 +50,7 @@ const Donations = () => {
 
         <Card className='list-card'>
           <Card.Body>
-            <img src="https://stephanie-buckette.s3.amazonaws.com/clothingitems.png" alt="clothing items" />
+            <img src="https://stephanie-buckette.s3.amazonaws.com/heart.png" alt="clothing items" />
             <Card.Title className='title'>
               <h3>Clothing Items</h3>
             </Card.Title>
@@ -71,7 +71,7 @@ const Donations = () => {
 
         <Card className='list-card'>
           <Card.Body>
-            <img src="https://stephanie-buckette.s3.amazonaws.com/hygieneitems.png" alt="hygiene items"  />
+            <img src="https://stephanie-buckette.s3.amazonaws.com/heart2.png" alt="hygiene items"  />
             <Card.Title className='title'>
               <h3>Hygiene Products</h3>
             </Card.Title>
@@ -91,7 +91,7 @@ const Donations = () => {
 
         <Card className='list-card'>
           <Card.Body>
-            <img src="https://stephanie-buckette.s3.amazonaws.com/schoolsupplies.png" alt="school supplies" />
+            <img src="https://stephanie-buckette.s3.amazonaws.com/heart.png" alt="school supplies" />
             <Card.Title className='title'>
               <h3>School Supplies</h3>
             </Card.Title>
@@ -109,7 +109,7 @@ const Donations = () => {
 
         <Card className='list-card'>
           <Card.Body>
-            <img src="https://stephanie-buckette.s3.amazonaws.com/other.png" alt="other" />
+            <img src="https://stephanie-buckette.s3.amazonaws.com/heart2.png" alt="other" />
             <Card.Title className='title'>
               <h3>Other</h3>
             </Card.Title>
