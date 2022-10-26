@@ -49,7 +49,7 @@ const SingleEvent = () => {
       .catch((error) => console.error(error))
 
     navigate('/admin')
-    window.location.reload()
+    // window.location.reload()
   }
   return (
     <div className='admin'>
