@@ -10,6 +10,7 @@ import Admin from './components/Admin'
 import Login from './components/Login'
 import SingleEvent from './components/SingleEvent'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import SignUp from './components/SignUp'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path='/admin' element={<Admin />} />
           <Route path='/single-event' element={<SingleEvent />} />
+          <Route path='/sign-up' element={<SignUp />} />
         </Route>
         <Route path='*' element={<h1>Oops! Invalid page.</h1>} />
       </Routes>
