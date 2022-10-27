@@ -6,7 +6,6 @@ const Admin = () => {
   const [eventForm, setEventForm] = useState({})
   const navigate = useNavigate()
   const [items, setItems] = useState([])
-  // const [submit, setSubmit] = useState(false)
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_ENDPOINT)
@@ -20,8 +19,17 @@ const Admin = () => {
   console.log(items)
 
   const addEventForm = (event) => {
-    setEventForm({ ...eventForm, [event.target.name]: event.target.value })
-    console.log(event.target.name)
+    if (event.target.name === 'date') {
+      const formatDate = event.target.value.split('-')
+      const year = formatDate[0]
+      const month = formatDate[1]
+      const day = formatDate[2]
+      const fullDate = month + '/' + day + '/' + year
+
+      setEventForm({ ...eventForm, [event.target.name]: fullDate })
+    } else {
+      setEventForm({ ...eventForm, [event.target.name]: event.target.value })
+    }
   }
 
   const addEventBtn = (event) => {
@@ -41,8 +49,6 @@ const Admin = () => {
         window.location.reload()
       })
       .catch((error) => console.error(error))
-
-    // setSubmit(true)
   }
 
   const handleLogOut = () => {
@@ -68,6 +74,7 @@ const Admin = () => {
             <input
               onChange={(event) => addEventForm(event)}
               type='text'
+              data-date-format='DD MM YYYY'
               placeholder='ex: image address'
               name='image'
               id='image'
@@ -88,20 +95,34 @@ const Admin = () => {
             <input
               onChange={(event) => addEventForm(event)}
               type='date'
-              placeholder='ex: November 22, 2020'
+              placeholder='ex: 11/22/2022'
               name='date'
               id='date'
             />
             <br />
 
-            <label htmlFor=''>Time: </label>
-            <input
-              onChange={(event) => addEventForm(event)}
-              type='text'
-              placeholder='ex: 6:22 AM'
+            <label>Time: </label>
+            <select
               name='time'
               id='time'
-            />
+              onChange={(event) => addEventForm(event)}
+              type='time'
+              placeholder='ex: 6:22 AM'
+            >
+              <option value='8:00 AM'>8:00 AM</option>
+              <option value='9:00 AM'>9:00 AM</option>
+              <option value='10:00 AM'>10:00 AM</option>
+              <option value='11:00 AM'>11:00 AM</option>
+              <option value='12:00 PM'>12:00 PM</option>
+              <option value='1:00 PM'>1:00 PM</option>
+              <option value='2:00 PM'>2:00 PM</option>
+              <option value='3:00 PM'>3:00 PM</option>
+              <option value='4:00 PM'>4:00 PM</option>
+              <option value='5:00 PM'>5:00 PM</option>
+              <option value='6:00 PM'>6:00 PM</option>
+              <option value='7:00 PM'>7:00 PM</option>
+              <option value='8:00 PM'>8:00 PM</option>
+            </select>
             <br />
 
             <label htmlFor=''>Address: </label>
