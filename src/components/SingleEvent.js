@@ -22,11 +22,11 @@ const SingleEvent = () => {
       .then((data) => {
         const { apiData } = data
         setEventForm(apiData)
+        window.location.reload()
       })
       .catch((error) => console.error(error))
       
       navigate('/admin')
-      window.location.reload()
   }
 
   const addEventForm = (event) => {
@@ -46,10 +46,10 @@ const SingleEvent = () => {
     })
       .then((response) => response.json())
       .then((data) => setEventForm(data))
+      window.location.reload()
       .catch((error) => console.error(error))
 
     navigate('/admin')
-    window.location.reload()
   }
   return (
     <div className='admin'>
@@ -82,7 +82,7 @@ const SingleEvent = () => {
             <label>Date: </label>
             <input
               onChange={(event) => addEventForm(event)}
-              type='text'
+              type='date'
               placeholder='ex: November 22, 2020'
               name='date'
               id='date'
