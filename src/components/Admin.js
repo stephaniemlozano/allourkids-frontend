@@ -38,17 +38,19 @@ const Admin = () => {
       .then((data) => {
         const { apiData } = data
         setEventForm(apiData)
+        window.location.reload()
       })
       .catch((error) => console.error(error))
 
     // setSubmit(true)
-    window.location.reload()
   }
 
   const handleLogOut = () => {
     localStorage.clear()
     navigate('/')
   }
+
+  console.log('this is event form', eventForm)
 
   return (
     <div className='admin'>
@@ -85,7 +87,7 @@ const Admin = () => {
             <label>Date: </label>
             <input
               onChange={(event) => addEventForm(event)}
-              type='text'
+              type='date'
               placeholder='ex: November 22, 2020'
               name='date'
               id='date'
