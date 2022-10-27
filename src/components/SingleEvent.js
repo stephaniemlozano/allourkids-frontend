@@ -45,8 +45,10 @@ const SingleEvent = () => {
       body: JSON.stringify(eventForm),
     })
       .then((response) => response.json())
-      .then((data) => setEventForm(data))
-      window.location.reload()
+      .then((data) => {
+        setEventForm(data)
+        window.location.reload()
+      })
       .catch((error) => console.error(error))
 
     navigate('/admin')
